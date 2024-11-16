@@ -13,13 +13,14 @@ struct ListContentView: BaseView {
     
     @Injected(ViewModelContainer.listContentVm) var viewModel
   
-    @State var data: [ListContentViewData] = []
+    @State var data: [ContentViewData] = []
     
     var body: some View {
         NavigationView {
             List(data, id: \.self) { item in
-                ListContentCell(contentData: item)
-                .listRowSeparator(.hidden)
+                NavigationLink(destination:ContentView(contentData: item)) {
+                    ListContentCell(contentData: item).padding(.leading, 16)
+                }.listRowSeparator(.hidden)
             }.contentMargins(.horizontal, 0)
             .navigationTitle("Courses")
         }
@@ -31,10 +32,10 @@ struct ListContentView: BaseView {
     
     func initObserver() {
         viewModel.liveGetListContentSuccess.subscribe(
-            onNext: {  viewdata in
+            onNext: { viewdata in
                 self.data = viewdata
             }
-        )
+        ).disposed(by: viewModel.disposeBag)
     }
     
     func loadData() {

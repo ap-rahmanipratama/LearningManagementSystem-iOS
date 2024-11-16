@@ -8,6 +8,19 @@
 import RxSwift
 
 class BaseViewModel {
+    private var _disposeBag: DisposeBag?
+    
+    var disposeBag: DisposeBag {
+        get {
+            if let d = self._disposeBag {
+                return d
+            } else {
+                self._disposeBag = DisposeBag()
+                return self._disposeBag!
+            }
+        }
+    }
+    
     lazy var _liveError = { PublishSubject<String>() }()
     var liveError: Observable<String> {
         _liveError.asObservable()

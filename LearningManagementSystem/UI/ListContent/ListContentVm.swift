@@ -13,8 +13,8 @@ class ListContentVm : BaseViewModel {
     
     @Injected(ServiceContainer.contentService) private var service
     
-    private let _liveGetListContentSuccess = PublishSubject<[ListContentViewData]>()
-    var liveGetListContentSuccess: Observable<[ListContentViewData]>{
+    private let _liveGetListContentSuccess = PublishSubject<[ContentViewData]>()
+    var liveGetListContentSuccess: Observable<[ContentViewData]>{
         return _liveGetListContentSuccess
     }
     
@@ -23,8 +23,8 @@ class ListContentVm : BaseViewModel {
         service.getListContent { result in
             switch result {
             case .success(let result): do {
-                let viewdata : [ListContentViewData] = result.map{ it in
-                    ListContentViewData(image: it.thumbnailURL,
+                let viewdata : [ContentViewData] = result.map{ it in
+                    ContentViewData(image: it.thumbnailURL,
                                         author: it.presenterName,
                                         title: it.title,
                                         description: it.description,

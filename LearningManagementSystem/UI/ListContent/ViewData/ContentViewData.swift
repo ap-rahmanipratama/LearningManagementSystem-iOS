@@ -1,5 +1,5 @@
 //
-//  ListContentViewData.swift
+//  ContentViewData.swift
 //  LearningManagementSystem
 //
 //  Created by Rahman on 16/11/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListContentViewData: Hashable {
+struct ContentViewData: Hashable {
     let image: String
     let author: String
     let title: String
