@@ -13,4 +13,5 @@ struct ListContentViewData: Hashable {
     let title: String
     let description: String
     let duration: String
+    let videoURL: String
 }

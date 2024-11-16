@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ListContentCell: View {
     
@@ -13,7 +14,7 @@ struct ListContentCell: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Image("default_thumbnail")
+            KFImage.url(URL(string: contentData.image))
                 .resizable()
                 .scaledToFill()
                 .frame(width: UIScreen.main.bounds.width - 8, height: 200)
@@ -41,5 +42,5 @@ struct ListContentCell: View {
 }
 
 #Preview {
-    ListContentCell(contentData: ListContentViewData(image: "default_thumbnail", author: "Rahman Pratama", title: "How to make a SwiftUI App", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", duration: "10:00"))
+    ListContentCell(contentData: ListContentViewData(image: "default_thumbnail", author: "Rahman Pratama", title: "How to make a SwiftUI App", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", duration: "10:00", videoURL: ""))
 }
