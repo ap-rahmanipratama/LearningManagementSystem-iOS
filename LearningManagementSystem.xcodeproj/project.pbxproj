@@ -7,16 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1188738C2CE8A832009D3F18 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188738B2CE8A829009D3F18 /* Package.swift */; };
-		1188738F2CE8A9F8009D3F18 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1188738E2CE8A9F8009D3F18 /* RxSwift */; };
-		118873912CE8A9F8009D3F18 /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 118873902CE8A9F8009D3F18 /* RxSwift-Dynamic */; };
-		118873932CE8A9F8009D3F18 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 118873922CE8A9F8009D3F18 /* RxTest */; };
-		118873952CE8A9F8009D3F18 /* RxTest-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 118873942CE8A9F8009D3F18 /* RxTest-Dynamic */; };
+		118873B12CE8ACCA009D3F18 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 118873B02CE8ACCA009D3F18 /* RxSwift */; };
+		118873C22CE8D111009D3F18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 118873C12CE8D111009D3F18 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1188737A2CE89CBF009D3F18 /* LearningManagementSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningManagementSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1188738B2CE8A829009D3F18 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,10 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				118873912CE8A9F8009D3F18 /* RxSwift-Dynamic in Frameworks */,
-				118873932CE8A9F8009D3F18 /* RxTest in Frameworks */,
-				118873952CE8A9F8009D3F18 /* RxTest-Dynamic in Frameworks */,
-				1188738F2CE8A9F8009D3F18 /* RxSwift in Frameworks */,
+				118873B12CE8ACCA009D3F18 /* RxSwift in Frameworks */,
+				118873C22CE8D111009D3F18 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +40,6 @@
 			isa = PBXGroup;
 			children = (
 				1188737C2CE89CBF009D3F18 /* LearningManagementSystem */,
-				1188738B2CE8A829009D3F18 /* Package.swift */,
 				1188737B2CE89CBF009D3F18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -79,10 +72,8 @@
 			);
 			name = LearningManagementSystem;
 			packageProductDependencies = (
-				1188738E2CE8A9F8009D3F18 /* RxSwift */,
-				118873902CE8A9F8009D3F18 /* RxSwift-Dynamic */,
-				118873922CE8A9F8009D3F18 /* RxTest */,
-				118873942CE8A9F8009D3F18 /* RxTest-Dynamic */,
+				118873B02CE8ACCA009D3F18 /* RxSwift */,
+				118873C12CE8D111009D3F18 /* Alamofire */,
 			);
 			productName = LearningManagementSystem;
 			productReference = 1188737A2CE89CBF009D3F18 /* LearningManagementSystem.app */;
@@ -113,7 +104,8 @@
 			mainGroup = 118873712CE89CBF009D3F18;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1188738D2CE8A9F8009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				118873AF2CE8ACCA009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				118873C02CE8D111009D3F18 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1188737B2CE89CBF009D3F18 /* Products */;
@@ -140,7 +132,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1188738C2CE8A832009D3F18 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +339,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1188738D2CE8A9F8009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		118873AF2CE8ACCA009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -356,28 +347,26 @@
 				minimumVersion = 6.8.0;
 			};
 		};
+		118873C02CE8D111009D3F18 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1188738E2CE8A9F8009D3F18 /* RxSwift */ = {
+		118873B02CE8ACCA009D3F18 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1188738D2CE8A9F8009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = 118873AF2CE8ACCA009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		118873902CE8A9F8009D3F18 /* RxSwift-Dynamic */ = {
+		118873C12CE8D111009D3F18 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1188738D2CE8A9F8009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxSwift-Dynamic";
-		};
-		118873922CE8A9F8009D3F18 /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1188738D2CE8A9F8009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
-		};
-		118873942CE8A9F8009D3F18 /* RxTest-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1188738D2CE8A9F8009D3F18 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = "RxTest-Dynamic";
+			package = 118873C02CE8D111009D3F18 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
