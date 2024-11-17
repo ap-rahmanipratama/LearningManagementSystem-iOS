@@ -13,6 +13,10 @@ protocol BaseView: View {
 
 extension BaseView {
 
+    func initEventListener() {
+        
+    }
+    
     func initObserver() {
     }
 
