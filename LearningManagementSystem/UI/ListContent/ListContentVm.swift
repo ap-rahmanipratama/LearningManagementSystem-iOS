@@ -12,6 +12,7 @@ import Factory
 class ListContentVm : BaseViewModel {
     
     @Injected(ServiceContainer.contentService) private var service
+    @Injected(CommonContainer.cache) private var cache
     
     private let _liveGetListContentSuccess = PublishSubject<[ContentViewData]>()
     var liveGetListContentSuccess: Observable<[ContentViewData]>{
@@ -31,7 +32,7 @@ class ListContentVm : BaseViewModel {
                                         duration: self.formatDuration(it.videoDuration),
                                         videoURL: it.videoURL)
                 }
-                
+                self.cache.setContentListCache(viewdata)
                 self._liveGetListContentSuccess.onNext(viewdata)
             }
             case .error(let error): do {

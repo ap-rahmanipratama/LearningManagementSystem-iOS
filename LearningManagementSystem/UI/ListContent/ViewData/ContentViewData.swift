@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentViewData: Hashable {
+struct ContentViewData: Hashable, Codable {
     let image: String
     let author: String
     let title: String

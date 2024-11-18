@@ -12,6 +12,7 @@ import RxSwift
 struct ListContentView: BaseView {
     
     @Injected(ViewModelContainer.listContentVm) var viewModel
+    @Injected(CommonContainer.cache) var cache
   
     @State var data: [ContentViewData] = []
     
@@ -34,6 +35,18 @@ struct ListContentView: BaseView {
         viewModel.liveGetListContentSuccess.subscribe(
             onNext: { viewdata in
                 self.data = viewdata
+            }
+        ).disposed(by: viewModel.disposeBag)
+        
+        viewModel.liveError.subscribe(
+            onNext: { error in
+                self.data = cache.getContentListCache() ?? []
+            }
+        ).disposed(by: viewModel.disposeBag)
+        
+        viewModel.liveConnectionError.subscribe(
+            onNext: { error in
+                self.data = cache.getContentListCache() ?? []
             }
         ).disposed(by: viewModel.disposeBag)
     }
