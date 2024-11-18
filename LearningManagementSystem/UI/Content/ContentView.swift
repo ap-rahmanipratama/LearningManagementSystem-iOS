@@ -13,6 +13,7 @@ struct ContentView: BaseView{
     var contentData: ContentViewData
 
     @State private var player: AVPlayer?
+    @State private var isShowingControls = true
     
     var body: some View {
         ScrollView {
@@ -20,6 +21,11 @@ struct ContentView: BaseView{
                 if let player = player {
                     VideoPlayer(player: player)
                         .frame(height: 200)
+                        .onTapGesture {
+                            withAnimation {
+                                isShowingControls.toggle()
+                            }
+                        }
                 }
                 VStack(alignment: .leading) {
                     Text(contentData.author).padding(.top, 4)
@@ -47,6 +53,7 @@ struct ContentView: BaseView{
             player = AVPlayer(url: url)
         }
     }
+    
 }
 
 #Preview {
