@@ -14,6 +14,7 @@ struct ContentView: BaseView{
 
     @State private var player: AVPlayer?
     @State private var isShowingControls = true
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ScrollView {
@@ -40,7 +41,20 @@ struct ContentView: BaseView{
                         .padding(.top, 8)
                         .padding(.bottom, 12)
                 }.padding(.horizontal, 16)
-            }
+            }.navigationBarBackButtonHidden()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button(action: {
+                            player?.pause()
+                            dismiss()
+                        }) {
+                            HStack {
+                                Image(systemName: "chevron.left")
+                                Text("Back")
+                            }
+                        }
+                    }
+                }
         }.onAppear {
             self.initObserver()
             self.loadData()
