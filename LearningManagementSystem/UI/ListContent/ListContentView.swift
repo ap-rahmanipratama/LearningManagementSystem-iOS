@@ -22,7 +22,7 @@ struct ListContentView: BaseView {
                 NavigationLink(destination:ContentView(contentData: item)) {
                     ListContentCell(contentData: item).padding(.leading, 16)
                 }.listRowSeparator(.hidden)
-            }.contentMargins(.horizontal, 0)
+            }.listStyle(.grouped)
             .navigationTitle("Courses")
         }
         .onAppear {
